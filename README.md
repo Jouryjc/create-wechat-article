@@ -13,11 +13,12 @@ This skill is designed for workflows like:
 The skill covers the full pipeline:
 
 1. Normalize the source material
-2. Rewrite it as a Chinese article
-3. Generate inline illustrations
-4. Generate a WeChat-friendly cover image
-5. Render with a local Doocs-compatible pipeline
-6. Submit to the WeChat Official Account draft box
+2. Strengthen the source material with targeted web research
+3. Rewrite it as a Chinese article
+4. Generate inline illustrations
+5. Generate a WeChat-friendly cover image
+6. Render with a local Doocs-compatible pipeline
+7. Submit to the WeChat Official Account draft box
 
 ## Defaults
 
@@ -32,6 +33,7 @@ The skill covers the full pipeline:
 
 This workflow was extracted from a real publishing pipeline and already includes fixes for common failure modes:
 
+- weak source material that needs stronger background research
 - online Doocs instability
 - WeChat CSS filtering
 - weak local-to-WeChat style transfer
@@ -44,6 +46,7 @@ This workflow was extracted from a real publishing pipeline and already includes
 - [SKILL.md](./SKILL.md): primary skill instructions
 - [references/workflow.md](./references/workflow.md): end-to-end workflow summary
 - [references/pitfalls.md](./references/pitfalls.md): production pitfalls and fixes
+- [references/research-rules.md](./references/research-rules.md): source-enrichment rules
 - [references/xiaoyu-style.md](./references/xiaoyu-style.md): writing style summary
 - [references/gen-image.md](./references/gen-image.md): shared image-generation guidance
 - [templates/article-frontmatter.md](./templates/article-frontmatter.md): markdown frontmatter template
@@ -53,6 +56,7 @@ This workflow was extracted from a real publishing pipeline and already includes
 
 This skill assumes these companion skills are installed in the runtime environment:
 
+- `agent-reach`
 - `baoyu-danger-x-to-markdown`
 - `baoyu-url-to-markdown`
 - `baoyu-article-illustrator`

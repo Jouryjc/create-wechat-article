@@ -9,13 +9,13 @@ description: Turn source material into a polished WeChat Official Account draft 
 
 Use this skill for the full pipeline:
 
-1. Read and整理 source material.
 1. Read and normalize source material.
-2. Rewrite it as a Chinese long-form article.
-3. Add inline illustrations.
-4. Generate a WeChat-friendly cover image.
-5. Render to WeChat HTML with local Doocs-compatible styling.
-6. Submit to the WeChat Official Account draft box.
+2. Strengthen the source material with targeted web research.
+3. Rewrite it as a Chinese long-form article.
+4. Add inline illustrations.
+5. Generate a WeChat-friendly cover image.
+6. Render to WeChat HTML with local Doocs-compatible styling.
+7. Submit to the WeChat Official Account draft box.
 
 This skill is API-first for WeChat draft submission. Do not switch to browser posting unless the user explicitly asks for it.
 
@@ -34,6 +34,7 @@ Use this skill when the input is any of the following:
 
 Read only the pieces you need for the current source type. Resolve these by installed skill name in the current environment:
 
+- `agent-reach`
 - `baoyu-danger-x-to-markdown`
 - `baoyu-url-to-markdown`
 - `baoyu-article-illustrator`
@@ -42,6 +43,7 @@ Read only the pieces you need for the current source type. Resolve these by inst
 - Shared image prompt fallback: [references/gen-image.md](references/gen-image.md)
 - Writing style guide: [references/xiaoyu-style.md](references/xiaoyu-style.md)
 - Rendering and publishing notes: [references/workflow.md](references/workflow.md), [references/pitfalls.md](references/pitfalls.md)
+- Research quality rules: [references/research-rules.md](references/research-rules.md)
 
 ## Default Conventions
 
@@ -84,11 +86,26 @@ Choose the narrowest source-ingestion path that fits:
 - GitHub repo: read the repo directly, then write your own research notes
 - Existing markdown / notes: use them directly
 
+Then run a second pass of targeted network research with `agent-reach` or another available search tool.
+
+This second pass should be used whenever the article would benefit from:
+
+- background context
+- official documentation
+- real-world examples
+- ecosystem comparisons
+- stronger factual grounding
+- up-to-date information that may have changed recently
+
 Requirements:
 
 - Preserve source URL if one exists
 - Preserve source author / repo / site metadata when available
 - Keep the source capture or notes locally for traceability
+- Treat the original source as the spine, not the whole article
+- Prefer high-quality sources: official docs, repo README, maintainer posts, primary materials, strong technical writeups
+- Avoid low-signal aggregation content unless it adds unique evidence
+- Keep a compact source list so the final article can cite or summarize where the extra context came from
 
 ### Step 2: Write the article
 
@@ -101,6 +118,7 @@ The article should:
 - Keep technical points accurate
 - Use section headings that are easy to scan in WeChat
 - Add short code comments when code snippets are included
+- Fold the extra research back into the main narrative instead of appending a disconnected source dump
 
 Recommended frontmatter:
 
@@ -206,6 +224,7 @@ At the end, report:
 
 The article is not done until all of these hold:
 
+- The source material has been strengthened with high-quality external research when useful
 - The markdown article reads naturally in Chinese
 - The cover follows `2.35:1` + centered `1:1` safe crop
 - The rendered HTML is local-Doocs based, not clipboard-dependent by default
