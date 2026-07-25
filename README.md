@@ -22,11 +22,13 @@ The skill covers the full pipeline:
 
 ## Defaults
 
-- Writing style: `码农小余`
+- Writing style: `蒸馏小余 2.0`
 - Article language: Chinese
-- Theme: `grace`
+- Theme: `grace` + classic blue primary `#0F4C81`
 - Cover aspect ratio: `2.35:1`
 - Square-safe crop: required for `1:1` thumbnail compatibility
+- Image style: 蒸馏小余奶油纸底知识卡, matching https://mp.weixin.qq.com/s/GaEdNZRgPV4ofNXvJsJQjQ
+- Cover reference: use explicit user-provided references only; do not default to `raw/640.jpeg`
 - Publishing: API-first
 
 ## Why This Skill Exists
@@ -40,11 +42,13 @@ This workflow was extracted from a real publishing pipeline and already includes
 - broken ordered/unordered list markers
 - duplicate bullet markers
 - cover images that look fine wide but break under square crop
+- cover styles drifting between articles because no reference image was enforced
 
 ## Files
 
 - [SKILL.md](./SKILL.md): primary skill instructions
 - [references/workflow.md](./references/workflow.md): end-to-end workflow summary
+- [references/theme-doocs-grace-classic-blue.md](./references/theme-doocs-grace-classic-blue.md): Doocs 优雅主题的经典蓝规范
 - [references/pitfalls.md](./references/pitfalls.md): production pitfalls and fixes
 - [references/research-rules.md](./references/research-rules.md): source-enrichment rules
 - [references/xiaoyu-style.md](./references/xiaoyu-style.md): writing style summary
@@ -60,7 +64,7 @@ This skill assumes these companion skills are installed in the runtime environme
 - `baoyu-danger-x-to-markdown`
 - `baoyu-url-to-markdown`
 - `baoyu-article-illustrator`
-- `baoyu-cover-image`
+- `codex-image-gen`
 - `baoyu-post-to-wechat`
 
 ## Publishing Notes
